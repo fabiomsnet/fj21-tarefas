@@ -8,6 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Lista Tarefas</title>
 	<script type="text/javascript" src="resources/js/jquery.js"></script>
+	<link type="text/css" href="resources/css/tarefas.css" rel="stylesheet">
 </head>
 <body>
 
@@ -36,7 +37,7 @@
 				<td>${tarefa.descricao}</td>
 				<c:if test="${tarefa.finalizado eq false}">
 					<td>
-						<a href="#" onclick="finalizaAgora(${tarefa.id})">Finalizar</a>
+						<a href="#" onclick="finalizaAgora(${tarefa.id})">Finalizar agora!</a>
 					</td>
 				</c:if>
 				<c:if test="${tarefa.finalizado eq true}">

@@ -5,15 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.caelum.tarefas.ConnectionFactory;
+import javax.sql.DataSource;
+
 import br.com.caelum.tarefas.modelo.Usuario;
 
 public class JdbcUsuarioDao {
 	private Connection connection;
 
-	public JdbcUsuarioDao() {
+	public JdbcUsuarioDao(DataSource dataSource) {
 		try {
-			connection = new ConnectionFactory().getConnection();
+			connection = dataSource.getConnection();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
